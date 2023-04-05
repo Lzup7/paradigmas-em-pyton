@@ -1,44 +1,29 @@
+try:
+  operação = int(input("Selecione o tipo da operação:\n(1)Adição\n(2)Subtração\n(3)Multiplicação\n(4)Divisão\n: "))
+  if 0 < operação < 5 :
+    try:
+      numero1 = int(input("Selecione o primeiro numero: "))
+      numero2 = int(input("Selecione o Segundo numero: "))
 
-while True:
-  try:
-    valor_hora = float(input("Quanto você ganha por hora: R$"))
-    horas = float(input("Quantas horas você trabalha por mes: "))
-    salario_bruto = valor_hora * horas
-    print(f"\nSalario Bruto:R${salario_bruto:.2f}")
-    if 0 < salario_bruto:
-      if 0 < salario_bruto <= 900 :
-        sindicato = 0.03 * salario_bruto
-        fgts = 0.11 * salario_bruto
-        salario_liquido = salario_bruto - sindicato
-        print(f"Sindicato: R${sindicato:.2f}\nFgts: R${fgts:.2f}\nTotal desconto: R${sindicato:.2f}\nSalario Liquido: R${salario_liquido:.2f}")
-        break
-      elif 900 < salario_bruto <= 1500 :
-        sindicato = 0.03 * salario_bruto
-        fgts = 0.11 * salario_bruto
-        imposto_renda = 0.05 * salario_bruto
-        total_desconto = sindicato + imposto_renda
-        salario_liquido = salario_bruto - (total_desconto)
-        print(f"Sindicato: R${sindicato:.2f}\nFgts: R${fgts:.2f}\nImposto de renda: R${imposto_renda:.2f}\nTotal desconto: R${total_desconto:.2f}\nSalario Liquido: R${salario_liquido:.2f}")
-        break
-      elif 1500 < salario_bruto <= 2500 :
-        sindicato = 0.03 * salario_bruto
-        fgts = 0.11 * salario_bruto
-        imposto_renda = 0.10 * salario_bruto
-        total_desconto = sindicato + imposto_renda
-        salario_liquido = salario_bruto - (total_desconto)
-        print(f"Sindicato: R${sindicato:.2f}\nFgts: R${fgts:.2f}\nImposto de renda: R${imposto_renda:.2f}\nTotal desconto: R${total_desconto:.2f}\nSalario Liquido: R${salario_liquido:.2f}")
-        break
-      elif 2500 < salario_bruto :
-       sindicato = 0.03 * salario_bruto
-       fgts = 0.11 * salario_bruto
-       imposto_renda = 0.20 * salario_bruto
-       total_desconto = sindicato + imposto_renda
-       salario_liquido = salario_bruto - (total_desconto)
-       print(f"Sindicato: R${sindicato:.2f}\nFgts: R${fgts:.2f}\nImposto de renda: R${imposto_renda:.2f}\nTotal desconto: R${total_desconto:.2f}\nSalario Liquido: R${salario_liquido:.2f}")
-      break
-    else:
-      print("\nErro\nSelecione um valor valido:\n")
-      
-      
-  except:
-    print("\nErro\nSelecione um valor valido:\n")
+      match operação:
+       case 1:
+        result1 = numero1 + numero2
+        print(f"A soma de {numero1} e {numero2} é {result1}\nResultado {result1} ")     
+       case 2 :
+        result2 = numero1 - numero2
+        print(f"A subtração de {numero1} e {numero2} é {result2}\nResultado {result2} ")
+       case 3 :
+        if not numero1 == 0 or numero2 == 0 :
+          result3 = numero1 * numero2
+          print(f"A Multiplicação de {numero1} e {numero2} é {result3}\nResultado {result3} ")
+       case 4:
+           print(f"A Multiplicação de {numero1} e {numero2} é 0\nResultado 0 ")
+     
+    except:
+      print("Erro\nDigite um numero valido")
+  else:
+    print("Erro:\nSelecione uma operação valida de 1 a 4.")    
+except ValueError:
+  print("\nErro:\nSelecione um numero valido.")
+
+  
